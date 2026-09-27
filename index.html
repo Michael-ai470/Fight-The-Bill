@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Medical Bill Rescue Pack — Free</title>
+<meta name="description" content="Three letters, seven phone scripts, and a fifteen-minute checklist that tell you whether you are being overcharged for medical care.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Oswald:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0e1218; --ink2:#161c25; --paper:#f5f3ee;
+    --accent:#e2483c; --muted:#96a0ac; --line:#2a323d;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:var(--ink); color:var(--paper);
+    font-family:Oswald,"Helvetica Neue",Arial,sans-serif;
+    font-weight:300; font-size:19px; line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:"Archivo Black",Impact,sans-serif;font-weight:400;line-height:1.02;letter-spacing:-0.01em;overflow-wrap:break-word}
+  .eyebrow{font-weight:600;font-size:15px;letter-spacing:.22em;color:var(--accent);text-transform:uppercase}
+  header{padding:96px 0 72px}
+  h1{font-size:clamp(32px,8.2vw,76px);margin:22px 0 0}
+  .sub{color:var(--muted);font-size:clamp(19px,2.6vw,24px);margin-top:26px;max-width:32em}
+  .rule{width:150px;height:9px;background:var(--accent);margin:46px 0 0}
+
+  form{margin:44px 0 0;display:flex;flex-wrap:wrap;gap:12px;max-width:540px}
+  input[type=email]{
+    flex:1 1 260px;min-width:0;background:var(--ink2);border:1px solid var(--line);
+    color:var(--paper);padding:17px 18px;font:inherit;font-weight:400;border-radius:3px;
+  }
+  input[type=email]:focus{outline:2px solid var(--accent);outline-offset:-1px;border-color:transparent}
+  input[type=email]::placeholder{color:#63707e}
+  button{
+    flex:0 0 auto;background:var(--accent);color:var(--paper);border:0;cursor:pointer;
+    padding:17px 30px;font:inherit;font-weight:600;letter-spacing:.08em;
+    text-transform:uppercase;font-size:15px;border-radius:3px;transition:background .15s;
+  }
+  button:hover{background:#c93c31}
+  .fine{color:#63707e;font-size:15px;margin-top:14px}
+  .status{margin-top:18px;font-size:18px;color:var(--paper);border-left:4px solid var(--accent);
+          padding-left:15px;display:none;max-width:34em}
+  .status.show{display:block}
+  form.sent{display:none}
+  #ml_sink{display:none}
+
+  section{padding:64px 0;border-top:1px solid var(--line)}
+  h2{font-size:clamp(26px,4.4vw,38px);margin-bottom:34px}
+  .item{display:flex;gap:18px;padding:17px 0;border-bottom:1px solid var(--line)}
+  .item:last-child{border-bottom:0}
+  .item i{flex:0 0 11px;height:11px;background:var(--accent);margin-top:12px;font-style:normal}
+  .item b{font-weight:600;color:var(--paper);display:block;font-size:19px}
+  .item span{color:var(--muted);font-size:18px}
+  .why p{color:var(--muted);margin-bottom:20px;max-width:34em}
+  .why p:last-child{color:var(--paper)}
+  .cta{text-align:left;padding-bottom:80px}
+  footer{border-top:1px solid var(--line);padding:36px 0 70px;color:#5a6672;font-size:15px}
+  footer p{max-width:40em}
+  .mark{font-weight:600;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;font-size:14px;margin-bottom:14px}
+
+  /* ---- Tablet ---- */
+  @media (max-width:860px){
+    header{padding:76px 0 58px}
+    section{padding:56px 0}
+  }
+
+  /* ---- Phone ---- */
+  @media (max-width:600px){
+    body{font-size:18px}
+    .wrap{padding:0 20px}
+    header{padding:52px 0 44px}
+    .sub{margin-top:20px}
+    .rule{margin-top:32px;height:8px;width:120px}
+    form{gap:10px;margin-top:34px}
+    input[type=email]{flex:1 1 100%;padding:16px 16px}
+    button{flex:1 1 100%;width:100%;text-align:center;padding:16px 24px}
+    section{padding:48px 0}
+    h2{margin-bottom:26px}
+    .item{gap:14px}
+    .cta{padding-bottom:60px}
+    footer{padding:32px 0 56px}
+  }
+
+  /* ---- Small phone ---- */
+  @media (max-width:360px){
+    header{padding:44px 0 40px}
+    .item i{margin-top:10px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">Free · No catch</div>
+    <h1>Most Americans pay medical bills they do not owe.</h1>
+    <p class="sub">Three letters, seven phone scripts, and a fifteen-minute checklist that tell you whether yours is one of them.</p>
+    <div class="rule"></div>
+
+    <form class="signup" action="https://assets.mailerlite.com/jsonp/1731247/forms/198893809603446631/subscribe" method="post" target="ml_sink">
+      <input type="email" name="fields[email]" placeholder="Your email address" required autocomplete="email">
+      <input type="hidden" name="ml-submit" value="1">
+      <input type="hidden" name="anticsrf" value="true">
+      <button type="submit">Send me the pack</button>
+    </form>
+    <p class="fine">No spam. Unsubscribe in one click. I will never sell your email address.</p>
+  </header>
+
+  <section>
+    <h2>What is inside</h2>
+    <div class="item"><i></i><div><b>The 15-minute triage checklist</b><span>Nineteen questions to run against your bill. Every yes is worth a phone call.</span></div></div>
+    <div class="item"><i></i><div><b>Letter 1 · Request for itemized bill and records</b><span>You cannot dispute a lump sum, only a line. This is how you get the lines.</span></div></div>
+    <div class="item"><i></i><div><b>Letter 2 · Financial assistance request</b><span>Nonprofit hospitals are required to have a discount policy. Far more people qualify than apply.</span></div></div>
+    <div class="item"><i></i><div><b>Letter 3 · Surprise bill demand</b><span>If an out-of-network doctor billed you at an in-network hospital, federal law is probably on your side.</span></div></div>
+    <div class="item"><i></i><div><b>Seven phone scripts</b><span>Read them out. They work because they signal in the first sentence that you know what you are entitled to.</span></div></div>
+    <div class="item"><i></i><div><b>The call log</b><span>The single thing most likely to win you an argument three months from now.</span></div></div>
+  </section>
+
+  <section class="why">
+    <h2>Why this exists</h2>
+    <p>The number on a medical bill is an opening position. Insurers pay a fraction of it. Hospitals have written policies describing exactly when they will reduce it, and many of those policies are legally required to be public.</p>
+    <p>A denied claim is a first response, not a verdict. You have appeal rights with deadlines that bind your insurer, and a right to review by someone who does not work for them.</p>
+    <p>Almost nobody uses any of this. That is the entire reason it keeps working.</p>
+  </section>
+
+  <section class="cta">
+    <form class="signup" action="https://assets.mailerlite.com/jsonp/1731247/forms/198893809603446631/subscribe" method="post" target="ml_sink">
+      <input type="email" name="fields[email]" placeholder="Your email address" required autocomplete="email">
+      <input type="hidden" name="ml-submit" value="1">
+      <input type="hidden" name="anticsrf" value="true">
+      <button type="submit">Send me the pack</button>
+    </form>
+    <p class="fine">Delivered straight to your inbox, as a printable PDF.</p>
+  </section>
+
+  <footer>
+    <div class="mark">From the office of AmmberDev</div>
+    <p>General consumer information, not legal, medical, financial or tax advice, and no professional relationship is created by reading it. Laws, deadlines and thresholds change. Verify anything you intend to rely on against a current official source and against your own plan documents before acting.</p>
+  </footer>
+
+</div>
+
+<iframe id="ml_sink" name="ml_sink" title="form target" aria-hidden="true" tabindex="-1"></iframe>
+
+<script>
+(function () {
+  document.querySelectorAll("form.signup").forEach(function (f) {
+    var note = document.createElement("p");
+    note.className = "status";
+    f.parentNode.insertBefore(note, f.nextSibling);
+
+    f.addEventListener("submit", function () {
+      var email = (f.querySelector('input[type=email]').value || "").trim();
+      if (!email) return;
+      // The POST goes to the hidden iframe, so the page never navigates away.
+      setTimeout(function () {
+        f.classList.add("sent");
+        note.innerHTML = "<strong>Check your inbox.</strong> We have sent a confirmation email to " +
+          email.replace(/[<>&]/g, "") +
+          ". Click the link in it and the pack arrives straight after. If it is not there in a few minutes, check your spam folder.";
+        note.classList.add("show");
+      }, 150);
+    });
+  });
+})();
+</script>
+</body>
+</html>
